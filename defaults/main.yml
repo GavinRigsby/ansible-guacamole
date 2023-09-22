@@ -30,9 +30,9 @@ guacamole_mysql_auth: false
 
 guacamole_mysql_connector_package: "{{ guacamole_mysql_connector_dl_url + 'mysql-connector-j-' + guacamole_mysql_connector_version + '.tar.gz' }}"
 
-guacamole_mysql_connector_dl_url: https://cdn.mysql.com//Downloads/Connector-J/
+guacamole_mysql_connector_dl_url: https://cdn.mysql.com/Downloads/Connector-J/
 
-guacamole_mysql_connector_version: 8.0.33
+guacamole_mysql_connector_version: 8.1.0
 
 # Defines if PostgreSQL DB should be used for authentication
 guacamole_postgresql_auth: false
@@ -110,4 +110,4 @@ guacamole_users: []
 #       password: password
 # Define version to install
 # 0.9.13-incubating | 0.9.14 | 1.0.0 | 1.1.0
-guacamole_version: 1.1.0
+guacamole_version: 1.5.3
