@@ -6,3 +6,11 @@
   become: true
   register: result
   until: result is successful
+
+- name: debian | Installing Guacamole Python Reqs
+  ansible.builtin.pip:
+    name: "{{ guacamole_debian_pip_reqs }}"
+    state: present
+  become: true
+  register: result
+  until: result is successful

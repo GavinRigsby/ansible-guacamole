@@ -147,7 +147,6 @@
     name: "{{ guacamole_postgresql_db['name'] }}"
     state: present
   become: true
-  become_user: postgres
   when: guacamole_postgresql_auth
 
 - name: config | Creating Guacamole DB User
@@ -168,7 +167,6 @@
     password: "{{ guacamole_postgresql_db['password'] }}"
     state: present
   become: true
-  become_user: postgres
   when: guacamole_postgresql_auth
 
 - name: config | Checking If DB Has Been Populated
