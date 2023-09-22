@@ -123,7 +123,7 @@
           - libvncserver-dev
           - libvorbis-dev
           - libwebp-dev
-          - pip3
+          - python3-pip
       when: ansible_distribution_version is version('18.04', '<')
 
     - name: set_facts | Setting Ubuntu 18.04-19.10 Facts
@@ -153,7 +153,7 @@
           - libvncserver-dev
           - libvorbis-dev
           - libwebp-dev
-          - pip3
+          - python3-pip
       when: (ansible_distribution_version is version('18.04', '>=') and
         ansible_distribution_version is version('19.10', '<='))
 
@@ -184,13 +184,13 @@
           - libvncserver-dev
           - libvorbis-dev
           - libwebp-dev
-          - pip3
+          - python3-pip
       when: ansible_distribution_version is version('19.10', '>=')
 
     - name: set_facts | Setting Ubuntu MySQL set_facts
       ansible.builtin.set_fact:
         guacamole_debian_pip_reqs:
-          - mysqlclient
+          - PyMySQL
           - cryptography
         guacamole_debian_pre_reqs: "{{ guacamole_debian_pre_reqs + ['mysql-client'] }}"
       when: guacamole_mysql_auth

@@ -46,6 +46,7 @@ guacamole_postgresql_connector_version: 42.2.20
 # Define MySQL DB Info
 guacamole_mysql_db:
   name: guacamole
+  user_host: localhost
   host: localhost
   port: 3306
   username: guacamole
