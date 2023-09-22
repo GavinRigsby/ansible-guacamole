@@ -135,6 +135,9 @@
 
 - name: config | Creating Guacamole DB
   community.mysql.mysql_db:
+    check_implicit_admin: true
+    login_user: "{{ guacamole_mysql_db['admin_username'] }}"
+    login_password: "{{ guacamole_mysql_db['admin_password'] }}"
     name: "{{ guacamole_mysql_db['name'] }}"
     login_host: "{{ guacamole_mysql_db['host'] }}"
     login_port: "{{ guacamole_mysql_db['port'] }}"
@@ -151,6 +154,9 @@
 
 - name: config | Creating Guacamole DB User
   community.mysql.mysql_user:
+    check_implicit_admin: true
+    login_user: "{{ guacamole_mysql_db['admin_username'] }}"
+    login_password: "{{ guacamole_mysql_db['admin_password'] }}"
     name: "{{ guacamole_mysql_db['username'] }}"
     password: "{{ guacamole_mysql_db['password'] }}"
     login_host: "{{ guacamole_mysql_db['host'] }}"
@@ -177,6 +183,9 @@
 
 - name: config | Popluating DB
   community.mysql.mysql_db:
+    check_implicit_admin: true
+    login_user: "{{ guacamole_mysql_db['admin_username'] }}"
+    login_password: "{{ guacamole_mysql_db['admin_password'] }}"
     name: "{{ guacamole_mysql_db['name'] }}"
     login_host: "{{ guacamole_mysql_db['host'] }}"
     login_port: "{{ guacamole_mysql_db['port'] }}"
