@@ -10,13 +10,13 @@
         guacamole_tomcat_service: tomcat7
         guacamole_tomcat_user: tomcat7
         guacamole_debian_pre_reqs:
-          - "{{ guacamole_tomcat }}"
+          - tomcat7
           - build-essential
-          - "{{ guacamole_freerdp }}"
+          - freerdp-x11
           - libavcodec-dev
           - libavutil-dev
           - libcairo2-dev
-          - "{{ guacamole_freerdp_dev }}"
+          - libfreerdp-dev
           - libjpeg62-turbo-dev
           - libossp-uuid-dev
           - libpango1.0-dev
@@ -39,13 +39,13 @@
         guacamole_tomcat_service: tomcat8
         guacamole_tomcat_user: tomcat8
         guacamole_debian_pre_reqs:
-          - "{{ guacamole_tomcat }}"
+          - tomcat8
           - build-essential
-          - "{{ guacamole_freerdp }}"
+          - freerdp-x11
           - libavcodec-dev
           - libavutil-dev
           - libcairo2-dev
-          - "{{ guacamole_freerdp_dev }}"
+          - freerdp2-dev
           - libjpeg62-turbo-dev
           - libossp-uuid-dev
           - libpango1.0-dev
@@ -68,13 +68,13 @@
         guacamole_tomcat_service: tomcat9
         guacamole_tomcat_user: tomcat
         guacamole_debian_pre_reqs:
-          - "{{ guacamole_tomcat }}"
+          - tomcat9
           - build-essential
-          - "{{ guacamole_freerdp }}"
+          - freerdp2-x11
           - libavcodec-dev
           - libavutil-dev
           - libcairo2-dev
-          - "{{ guacamole_freerdp_dev }}"
+          - freerdp2-dev
           - libjpeg62-turbo-dev
           - libossp-uuid-dev
           - libpango1.0-dev
@@ -102,15 +102,15 @@
         guacamole_tomcat_service: tomcat7
         guacamole_tomcat_user: tomcat7
         guacamole_debian_pre_reqs:
-          - "{{ guacamole_tomcat }}"
+          - tomcat7
           - build-essential
           - dpkg-dev
-          - "{{ guacamole_freerdp }}"
+          - freerdp-x11
           - ghostscript
           - libavcodec-dev
           - libavutil-dev
           - libcairo2-dev
-          - "{{ guacamole_freerdp_dev }}"
+          - libfreerdp-dev
           - libjpeg-turbo8-dev
           - libossp-uuid-dev
           - libpango1.0-dev
@@ -134,13 +134,13 @@
         guacamole_tomcat_service: tomcat8
         guacamole_tomcat_user: tomcat8
         guacamole_debian_pre_reqs:
-          - "{{ guacamole_tomcat }}"
+          - tomcat8
           - build-essential
-          - "{{ guacamole_freerdp }}"
+          - freerdp-x11
           - libavcodec-dev
           - libavutil-dev
           - libcairo2-dev
-          - "{{ guacamole_freerdp_dev }}"
+          - freerdp2-dev
           - libjpeg-turbo8-dev
           - libossp-uuid-dev
           - libpango1.0-dev
@@ -165,13 +165,13 @@
         guacamole_tomcat_service: tomcat9
         guacamole_tomcat_user: tomcat
         guacamole_debian_pre_reqs:
-          - "{{ guacamole_tomcat }}"
+          - tomcat9
           - build-essential
-          - "{{ guacamole_freerdp }}"
+          - freerdp2-x11
           - libavcodec-dev
           - libavutil-dev
           - libcairo2-dev
-          - "{{ guacamole_freerdp_dev }}"
+          - freerdp2-dev
           - libjpeg-turbo8-dev
           - libossp-uuid-dev
           - libpango1.0-dev
@@ -212,7 +212,7 @@
         guacamole_tomcat_service: tomcat
         guacamole_tomcat_user: tomcat
         guacamole_redhat_pre_reqs:
-          - "{{ guacamole_tomcat }}"
+          - tomcat
           - cairo-devel
           - ffmpeg-devel
           - freerdp-devel
