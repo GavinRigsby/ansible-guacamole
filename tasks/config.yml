@@ -255,6 +255,16 @@
      guacamole_postgresql_auth) and
     _guacamole_db_populated['changed']
 
+- name: config | Creating Tomcat Server Configuration
+  ansible.builtin.template:
+    src: tomcat/server.xml.j2
+    dest: "{{ '/var/lib/' + guacamole_tomcat + '/conf/server.xml' }}"
+    owner: "{{ guacamole_tomcat_user }}"
+    group: "{{ guacamole_tomcat_user }}"
+    mode: u=rw,g=r
+  become: true
+  when: guacamole_tomcat_port is defined
+
 - name: config | Creating Tomcat symlink For guacamole.properties
   ansible.builtin.file:
     src: /etc/guacamole
@@ -268,9 +278,9 @@
     - kill guacd
     - restart guacd
 
-- name: Update index.hmtl of ROOT in tomcat to redirect to guacamole webapps # noqa no-handler risky-file-permissions
+- name: Update index.html of ROOT in tomcat to redirect to guacamole webapps # noqa no-handler risky-file-permissions
   ansible.builtin.copy:
     content: "<meta http-equiv='Refresh' content=\"0; url='{{ guacamole_redirect }}'\"/>"
     dest: "{{ '/var/lib/' + guacamole_tomcat + '/webapps/ROOT/index.html' }}"
-  when: guacamole_redirect is defined
+  when: guacamole_redirect
   become: true
